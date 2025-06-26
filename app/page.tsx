@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState, useEffect } from "react"
@@ -26,17 +27,13 @@ import {
   Calendar,
   MessageSquare,
   Gauge,
-  Building,
-  Hammer,
-  PaintBucket,
-  Sun,
+  Flame,
+  Droplet,
+  Wind,
+  ThermometerSun,
   Quote,
-  PlayCircle,
-  Download,
-  BookOpen,
-  Camera,
-  MapPinIcon,
   Send,
+  Facebook,
 } from "lucide-react"
 
 export default function HomePage() {
@@ -53,227 +50,201 @@ export default function HomePage() {
 
   const services = [
     {
-      title: "Toitures Neuves Premium",
-      description: "Conception et installation complète avec matériaux haut de gamme et garantie étendue.",
+      title: "Installation Chauffage",
+      description: "Installation complète de systèmes de chauffage modernes et économiques pour votre confort optimal.",
       image: "/placeholder.svg?height=300&width=400",
-      icon: <Home className="w-6 h-6" />,
-      features: ["Matériaux premium", "Garantie 20 ans", "Design personnalisé"],
-      color: "from-blue-600 to-blue-800",
+      icon: <Flame className="w-6 h-6" />,
+      features: ["Chaudières gaz/mazout", "Pompes à chaleur", "Chauffage sol"],
+      color: "from-[#007BBD] to-[#08C5F7]",
     },
     {
-      title: "Rénovation Complète",
-      description: "Transformation totale de votre toiture avec techniques modernes et isolation renforcée.",
+      title: "Sanitaire",
+      description: "Solutions sanitaires complètes pour salles de bain et installations d'eau avec finitions soignées.",
+      image: "/placeholder.svg?height=300&width=400",
+      icon: <Droplet className="w-6 h-6" />,
+      features: ["Installation complète", "Rénovation sanitaire", "Dépannage rapide"],
+      color: "from-[#8CC54A] to-[#7da036]",
+    },
+    {
+      title: "Ventilation",
+      description: "Systèmes de ventilation performants pour un air sain et une régulation optimale de l'humidité.",
+      image: "/placeholder.svg?height=300&width=400",
+      icon: <Wind className="w-6 h-6" />,
+      features: ["VMC simple/double flux", "Ventilation industrielle", "Entretien régulier"],
+      color: "from-[#F79431] to-[#ff9f4d]",
+    },
+    {
+      title: "Entretien & Maintenance",
+      description: "Entretien régulier et maintenance préventive pour garantir la longévité de vos installations.",
       image: "/placeholder.svg?height=300&width=400",
       icon: <Wrench className="w-6 h-6" />,
-      features: ["Isolation thermique", "Étanchéité parfaite", "Finitions soignées"],
-      color: "from-purple-600 to-purple-800",
+      features: ["Contrats d'entretien", "Dépannage 24/7", "Diagnostic approfondi"],
+      color: "from-[#007BBD] to-[#0066a1]",
     },
     {
-      title: "Entretiens Professionnels",
-      description: "Maintenance préventive et curative pour prolonger la durée de vie de votre toiture.",
+      title: "Économies d'Énergie",
+      description: "Solutions pour réduire votre consommation énergétique et vos factures de chauffage.",
       image: "/placeholder.svg?height=300&width=400",
-      icon: <Shield className="w-6 h-6" />,
-      features: ["Démoussage écologique", "Traitement hydrofuge", "Inspection complète"],
-      color: "from-green-600 to-green-800",
+      icon: <ThermometerSun className="w-6 h-6" />,
+      features: ["Audit énergétique", "Optimisation système", "Conseils personnalisés"],
+      color: "from-[#8CC54A] to-[#6fa038]",
     },
     {
-      title: "Interventions d'Urgence",
-      description: "Service 24h/24 pour tous vos problèmes de toiture nécessitant une action immédiate.",
+      title: "Urgences 24/7",
+      description: "Service d'intervention rapide disponible 24h/24 et 7j/7 pour tous vos problèmes urgents.",
       image: "/placeholder.svg?height=300&width=400",
       icon: <Zap className="w-6 h-6" />,
-      features: ["Disponible 24h/24", "Intervention rapide", "Réparation durable"],
-      color: "from-red-600 to-red-800",
-    },
-    {
-      title: "Bardages Modernes",
-      description: "Solutions d'isolation et d'esthétique pour transformer l'apparence de votre façade.",
-      image: "/placeholder.svg?height=300&width=400",
-      icon: <Building className="w-6 h-6" />,
-      features: ["Isolation renforcée", "Design contemporain", "Matériaux durables"],
-      color: "from-indigo-600 to-indigo-800",
-    },
-    {
-      title: "Panneaux Photovoltaïques",
-      description: "Installation et entretien pour optimiser votre production d'énergie renouvelable.",
-      image: "/placeholder.svg?height=300&width=400",
-      icon: <Sun className="w-6 h-6" />,
-      features: ["Installation certifiée", "Maintenance optimisée", "Rendement maximal"],
-      color: "from-yellow-600 to-orange-600",
+      features: ["Intervention rapide", "Disponibilité 24/7", "Devis transparent"],
+      color: "from-[#EF313A] to-[#d62830]",
     },
   ]
 
   const specialties = [
     {
-      icon: <Hammer className="w-8 h-8" />,
-      title: "Charpenterie Traditionnelle",
-      description: "Savoir-faire ancestral pour des structures durables",
-    },
-    {
-      icon: <PaintBucket className="w-8 h-8" />,
-      title: "Zinguerie Artistique",
-      description: "Finitions métalliques sur mesure et décoratives",
-    },
-    {
-      icon: <Eye className="w-8 h-8" />,
-      title: "Diagnostic Précis",
-      description: "Analyse complète avec rapport détaillé",
+      icon: <Flame className="w-8 h-8" />,
+      title: "Chauffage Central",
+      description: "Expertise en systèmes de chauffage central performants",
     },
     {
       icon: <Gauge className="w-8 h-8" />,
-      title: "Performance Énergétique",
-      description: "Optimisation de l'isolation et de l'étanchéité",
+      title: "Régulation Intelligente",
+      description: "Systèmes de régulation pour un confort optimal",
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Conformité Légale",
+      description: "Respect des normes wallonnes et certifications",
+    },
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: "Garantie Qualité",
+      description: "Travail certifié avec garantie étendue",
     },
   ]
 
   const testimonials = [
     {
-      name: "Marie Dubois",
-      location: "Wanze",
-      text: "Travail impeccable ! Jérôme et son équipe ont rénové notre toiture avec un professionnalisme remarquable. La transformation est spectaculaire et la qualité des finitions exceptionnelle.",
+      name: "Sophie Martin",
+      location: "Liège",
+      text: "Excellente intervention pour l'installation de notre nouvelle chaudière. Équipe professionnelle, travail propre et soigné. Les conseils pour les économies d'énergie sont très appréciés.",
       rating: 5,
-      project: "Rénovation complète",
+      project: "Installation chaudière",
       image: "/placeholder.svg?height=80&width=80",
     },
     {
-      name: "Pierre Martin",
-      location: "Huy",
-      text: "Service rapide et efficace pour un dépannage urgent. Prix honnête et travail de qualité. L'équipe est arrivée dans l'heure et a résolu le problème définitivement.",
+      name: "Jean Dubois",
+      location: "Verviers",
+      text: "Service d'urgence impeccable ! Fuite réparée en moins de 2h un dimanche. Prix correct et transparence totale. Je recommande vivement Monte & Chauffe.",
       rating: 5,
-      project: "Dépannage d'urgence",
+      project: "Dépannage urgent",
       image: "/placeholder.svg?height=80&width=80",
     },
     {
-      name: "Sophie Laurent",
-      location: "Andenne",
-      text: "Excellent suivi du projet de A à Z. Devis clair, délais respectés et finitions parfaites. Une équipe de confiance que je recommande sans hésitation !",
+      name: "Marie Laurent",
+      location: "Spa",
+      text: "Entretien annuel de notre chaudière mazout toujours parfait. L'équipe est ponctuelle, efficace et de bon conseil. Un vrai service de qualité.",
       rating: 5,
-      project: "Toiture neuve",
+      project: "Entretien chaudière",
       image: "/placeholder.svg?height=80&width=80",
     },
     {
-      name: "Jean-Claude Moreau",
-      location: "Namur",
-      text: "Installation de panneaux photovoltaïques parfaitement réalisée. Rendement optimal et service après-vente irréprochable. Un investissement rentable grâce à leur expertise.",
+      name: "Pierre Moreau",
+      location: "Eupen",
+      text: "Installation complète du chauffage et sanitaire dans notre nouvelle maison. Travail remarquable, délais respectés et équipe très professionnelle.",
       rating: 5,
-      project: "Panneaux solaires",
+      project: "Installation complète",
       image: "/placeholder.svg?height=80&width=80",
     },
   ]
 
   const faqs = [
     {
-      question: "Proposez-vous des devis gratuits et sans engagement ?",
+      question: "Proposez-vous des contrats d'entretien pour les chaudières ?",
       answer:
-        "Oui, nous proposons des devis gratuits et sans engagement. Nous nous déplaçons pour évaluer vos besoins et vous fournir une estimation précise avec un rapport détaillé.",
+        "Oui, nous proposons des contrats d'entretien annuels pour tous types de chaudières (gaz, mazout). Ces contrats incluent la visite annuelle obligatoire, le nettoyage, les réglages et un tarif préférentiel sur les dépannages.",
     },
     {
-      question: "Quelle est la durée de garantie sur vos travaux ?",
+      question: "Quelles sont vos zones d'intervention ?",
       answer:
-        "Nous offrons une garantie décennale sur tous nos travaux de toiture neuve et rénovation, ainsi qu'une garantie de 5 ans sur les travaux d'entretien et de réparation.",
+        "Nous intervenons principalement sur Liège et sa région (04/374.17.53) ainsi que sur Verviers et environs (087/34.07.29). Pour les urgences, nous couvrons une zone élargie.",
     },
     {
-      question: "Intervenez-vous en urgence et quels sont vos délais ?",
+      question: "Êtes-vous disponibles pour les urgences ?",
       answer:
-        "Nous proposons un service d'urgence 24h/24 pour les fuites et problèmes critiques. Pour les autres interventions, nos délais sont généralement de 48h à 1 semaine selon la saison.",
+        "Oui, nous proposons un service d'urgence 24h/24 et 7j/7. Vous pouvez nous contacter au 0497/83.16.75 (également WhatsApp) pour toute intervention urgente.",
     },
     {
-      question: "Quels types de matériaux utilisez-vous ?",
+      question: "Qu'est-ce que le diagnostic approfondi obligatoire ?",
       answer:
-        "Nous travaillons exclusivement avec des matériaux de première qualité : tuiles en terre cuite, ardoises naturelles, zinc, cuivre, et matériaux d'isolation haute performance.",
+        "Le diagnostic approfondi est une obligation légale en Wallonie pour les propriétaires. Il permet d'évaluer la performance énergétique de votre installation et d'identifier les améliorations possibles pour réaliser des économies d'énergie.",
     },
     {
-      question: "Proposez-vous des solutions d'isolation et d'étanchéité ?",
+      question: "Travaillez-vous avec toutes les marques de chaudières ?",
       answer:
-        "Absolument ! Nous intégrons des solutions d'isolation thermique et phonique performantes, ainsi que des systèmes d'étanchéité modernes pour optimiser l'efficacité énergétique.",
+        "Oui, nos techniciens sont formés et certifiés pour intervenir sur toutes les grandes marques de chaudières et systèmes de chauffage du marché.",
     },
     {
-      question: "Travaillez-vous avec les assurances ?",
+      question: "Comment puis-je réduire ma consommation de chauffage ?",
       answer:
-        "Oui, nous avons l'habitude de travailler avec les compagnies d'assurance pour les sinistres. Nous vous accompagnons dans toutes les démarches administratives.",
+        "Nous proposons des audits énergétiques complets pour identifier les points d'amélioration : isolation, régulation, entretien régulier, remplacement d'équipements vétustes. Nos experts vous conseillent les solutions les plus adaptées à votre situation.",
     },
   ]
 
   const stats = [
-    { number: "500+", label: "Projets Réalisés", icon: <Home className="w-6 h-6" /> },
     { number: "15+", label: "Années d'Expérience", icon: <Award className="w-6 h-6" /> },
-    { number: "100%", label: "Clients Satisfaits", icon: <Heart className="w-6 h-6" /> },
-    { number: "24h", label: "Service d'Urgence", icon: <Clock className="w-6 h-6" /> },
-  ]
-
-  const blogPosts = [
-    {
-      title: "Guide Complet : Quand et Comment Démousser sa Toiture",
-      excerpt:
-        "Découvrez les signes qui indiquent qu'il est temps de démousser votre toiture et les techniques professionnelles pour un résultat durable.",
-      image: "/placeholder.svg?height=200&width=300",
-      date: "15 Mars 2024",
-      category: "Entretien",
-      readTime: "5 min",
-    },
-    {
-      title: "Rénovation de Toiture : Aides Financières en Wallonie 2024",
-      excerpt:
-        "Tour d'horizon complet des primes et aides disponibles pour vos projets de rénovation de toiture en Région wallonne.",
-      image: "/placeholder.svg?height=200&width=300",
-      date: "8 Mars 2024",
-      category: "Financement",
-      readTime: "7 min",
-    },
-    {
-      title: "Bardage : Isolation et Esthétique pour votre Façade",
-      excerpt: "Comment le bardage peut transformer votre maison tout en améliorant ses performances énergétiques.",
-      image: "/placeholder.svg?height=200&width=300",
-      date: "1 Mars 2024",
-      category: "Bardage",
-      readTime: "6 min",
-    },
+    { number: "1000+", label: "Clients Satisfaits", icon: <Heart className="w-6 h-6" /> },
+    { number: "24/7", label: "Service Urgence", icon: <Clock className="w-6 h-6" /> },
+    { number: "100%", label: "Conformité Légale", icon: <Shield className="w-6 h-6" /> },
   ]
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Header */}
-      <header className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white sticky top-0 z-50 shadow-2xl">
+      <header className="bg-white text-gray-800 sticky top-0 z-50 shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <Image src="/logo-jerhome.png" alt="Jer'Home Toiture" width={180} height={60} className="h-12 w-auto" />
+              <div className="flex items-center">
+                <span className="text-2xl font-black text-[#007BBD]">Monte</span>
+                <span className="text-2xl font-black text-[#F79431]">&</span>
+                <span className="text-2xl font-black text-[#007BBD]">Chauffe</span>
+                <div className="ml-2 flex">
+                  <div className="w-2 h-6 bg-[#08C5F7] rounded-full"></div>
+                  <div className="w-2 h-6 bg-[#8CC54A] rounded-full -ml-1"></div>
+                  <div className="w-2 h-6 bg-[#F79431] rounded-full -ml-1"></div>
+                </div>
+              </div>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              <a href="#accueil" className="hover:text-[#96C044] transition-all duration-300 font-medium">
+              <a href="#accueil" className="hover:text-[#007BBD] transition-all duration-300 font-medium">
                 Accueil
               </a>
               <div className="relative group">
-                <button className="hover:text-[#96C044] transition-all duration-300 flex items-center font-medium">
+                <button className="hover:text-[#007BBD] transition-all duration-300 flex items-center font-medium">
                   Nos Services <ChevronDown className="ml-1 w-4 h-4" />
                 </button>
               </div>
-              <a href="#realisations" className="hover:text-[#96C044] transition-all duration-300 font-medium">
-                Réalisations
-              </a>
-              <a href="#qui-sommes-nous" className="hover:text-[#96C044] transition-all duration-300 font-medium">
+              <a href="#qui-sommes-nous" className="hover:text-[#007BBD] transition-all duration-300 font-medium">
                 À Propos
               </a>
-              <a href="#temoignages" className="hover:text-[#96C044] transition-all duration-300 font-medium">
+              <a href="#temoignages" className="hover:text-[#007BBD] transition-all duration-300 font-medium">
                 Témoignages
               </a>
-              <a href="#blog" className="hover:text-[#96C044] transition-all duration-300 font-medium">
-                Blog
-              </a>
-              <a href="#contact" className="hover:text-[#96C044] transition-all duration-300 font-medium">
+              <a href="#contact" className="hover:text-[#007BBD] transition-all duration-300 font-medium">
                 Contact
               </a>
             </nav>
 
             {/* Contact Info & CTA */}
             <div className="hidden lg:flex items-center space-x-4">
-              <div className="flex items-center space-x-2 text-[#96C044] bg-white/10 px-4 py-2 rounded-full">
+              <div className="flex items-center space-x-2 text-[#007BBD] bg-[#007BBD]/10 px-4 py-2 rounded-full">
                 <Phone className="w-4 h-4" />
-                <span className="font-bold">0496/22.95.90</span>
+                <span className="font-bold">0497/83.16.75</span>
               </div>
-              <Button className="bg-gradient-to-r from-[#96C044] to-[#7da036] hover:from-[#7da036] hover:to-[#96C044] text-white font-bold px-6 py-3 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+              <Button className="bg-[#007BBD] hover:bg-[#0066a1] text-white font-bold px-6 py-3 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
                 Devis Gratuit
               </Button>
             </div>
@@ -286,24 +257,21 @@ export default function HomePage() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-slate-700">
+            <div className="lg:hidden py-4 border-t border-gray-200">
               <nav className="flex flex-col space-y-4">
-                <a href="#accueil" className="hover:text-[#96C044] transition-colors">
+                <a href="#accueil" className="hover:text-[#007BBD] transition-colors">
                   Accueil
                 </a>
-                <a href="#services" className="hover:text-[#96C044] transition-colors">
+                <a href="#services" className="hover:text-[#007BBD] transition-colors">
                   Nos Services
                 </a>
-                <a href="#realisations" className="hover:text-[#96C044] transition-colors">
-                  Réalisations
-                </a>
-                <a href="#qui-sommes-nous" className="hover:text-[#96C044] transition-colors">
+                <a href="#qui-sommes-nous" className="hover:text-[#007BBD] transition-colors">
                   À Propos
                 </a>
-                <a href="#temoignages" className="hover:text-[#96C044] transition-colors">
+                <a href="#temoignages" className="hover:text-[#007BBD] transition-colors">
                   Témoignages
                 </a>
-                <a href="#contact" className="hover:text-[#96C044] transition-colors">
+                <a href="#contact" className="hover:text-[#007BBD] transition-colors">
                   Contact
                 </a>
               </nav>
@@ -315,62 +283,52 @@ export default function HomePage() {
       {/* Hero Section */}
       <section
         id="accueil"
-        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
-        style={{
-          backgroundImage: `linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.85)), url('https://cdn.discordapp.com/attachments/1086348722159484928/1387351657905651776/480317754_1200467115418472_505568237253095816_n.png?ex=685d076a&is=685bb5ea&hm=d6055596001a6acee2319ac22de406aae937e62fedc69049ba4764a05be370d0&')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
+        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#007BBD] via-[#0066a1] to-[#08C5F7]"
       >
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#96C044]/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8CC54A]/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#F79431]/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-white">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
-              <span className="inline-block bg-gradient-to-r from-[#96C044] to-[#7da036] text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider mb-4">
-                Excellence & Passion depuis 15 ans
+              <span className="inline-block bg-white/20 backdrop-blur text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider mb-4">
+                Qualité & Fiabilité depuis 15 ans
               </span>
             </div>
 
-            <h1 className="text-5xl lg:text-8xl font-black mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
-                Votre Toit,
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-[#96C044] via-[#7da036] to-[#96C044] bg-clip-text text-transparent">
-                Notre Passion
+            <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-tight">
+              <span className="block">Votre Confort,</span>
+              <span className="bg-gradient-to-r from-[#8CC54A] via-[#F79431] to-[#8CC54A] bg-clip-text text-transparent">
+                Notre Priorité
               </span>
             </h1>
 
             <p className="text-xl lg:text-2xl mb-6 opacity-90 max-w-3xl mx-auto leading-relaxed">
-              L'excellence par Jer'Home Toiture : Solutions complètes pour toutes vos toitures et bardages à Wanze et
-              ses environs
+              Installation de chauffage, sanitaire et ventilation réalisée exclusivement avec qualité et fiabilité
             </p>
 
-            <p className="text-lg lg:text-xl mb-12 text-[#96C044] font-bold max-w-2xl mx-auto">
-              Jérôme Fourneau et son équipe d'experts, dédiés à la longévité et à la beauté de votre habitat
+            <p className="text-lg lg:text-xl mb-12 font-semibold max-w-2xl mx-auto">
+              L'équilibre entre le budget et votre satisfaction au cœur du projet
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#96C044] to-[#7da036] hover:from-[#7da036] hover:to-[#96C044] text-white text-lg px-10 py-6 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-[#8CC54A] hover:bg-[#7da036] text-white text-lg px-10 py-6 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
-                <PlayCircle className="mr-3 w-6 h-6" />
-                Découvrir Nos Services
+                <Phone className="mr-3 w-6 h-6" />
+                Appel Gratuit
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-slate-900 text-lg px-10 py-6 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-[#007BBD] text-lg px-10 py-6 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
-                <Phone className="mr-3 w-6 h-6" />
-                Appel Gratuit
+                <MessageSquare className="mr-3 w-6 h-6" />
+                WhatsApp
               </Button>
             </div>
 
@@ -381,9 +339,9 @@ export default function HomePage() {
                   key={index}
                   className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
                 >
-                  <div className="text-[#96C044] mb-2 flex justify-center">{stat.icon}</div>
+                  <div className="text-[#8CC54A] mb-2 flex justify-center">{stat.icon}</div>
                   <div className="text-3xl font-black text-white mb-1">{stat.number}</div>
-                  <div className="text-sm text-gray-300 font-medium">{stat.label}</div>
+                  <div className="text-sm text-gray-100 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -392,7 +350,36 @@ export default function HomePage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-[#96C044]" />
+          <ChevronDown className="w-8 h-8 text-white" />
+        </div>
+      </section>
+
+      {/* Contact Bar */}
+      <section className="bg-[#F79431] py-6">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-8 text-white">
+            <div className="flex items-center gap-3">
+              <Phone className="w-5 h-5" />
+              <div>
+                <div className="font-bold">Liège et région</div>
+                <div className="text-lg">04 / 374.17.53</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Phone className="w-5 h-5" />
+              <div>
+                <div className="font-bold">Verviers et région</div>
+                <div className="text-lg">087 / 34.07.29</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <MessageSquare className="w-5 h-5" />
+              <div>
+                <div className="font-bold">Mobile & WhatsApp</div>
+                <div className="text-lg">0497 / 83.16.75</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -400,124 +387,96 @@ export default function HomePage() {
       <section id="qui-sommes-nous" className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-[#96C044]/20 to-transparent rounded-3xl"></div>
-              <Image
-                src="/placeholder.svg?height=600&width=700"
-                alt="Jérôme Fourneau et son équipe"
-                width={700}
-                height={600}
-                className="rounded-3xl shadow-2xl relative z-10"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-[#96C044] to-[#7da036] text-white p-6 rounded-2xl shadow-xl">
-                <div className="text-3xl font-black">15+</div>
-                <div className="text-sm font-bold">Années d'Excellence</div>
-              </div>
-            </div>
-
             <div>
               <div className="mb-6">
-                <span className="inline-block bg-gradient-to-r from-[#96C044] to-[#7da036] text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider">
-                  Notre Histoire
+                <span className="inline-block bg-[#007BBD] text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider">
+                  Notre Expertise
                 </span>
               </div>
 
-              <h2 className="text-4xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight">
-                Jérôme Fourneau :<span className="text-[#96C044]"> Votre Toit, Ma Passion</span>
+              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">
+                Monte & Chauffe : <span className="text-[#007BBD]">Votre Partenaire de Confiance</span>
               </h2>
 
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Depuis plus de <strong className="text-[#96C044]">15 ans</strong>, Jérôme Fourneau met son expertise
-                  et sa passion au service de votre habitat. Basée à Wanze, notre entreprise familiale s'est forgée une
-                  réputation d'excellence grâce à un savoir-faire artisanal allié aux techniques les plus modernes.
+                  Depuis plus de <strong className="text-[#007BBD]">15 ans</strong>, Monte & Chauffe est votre
+                  spécialiste en chauffage, sanitaire et ventilation dans les régions de Liège et Verviers.
                 </p>
                 <p>
-                  Chaque projet est unique et mérite une attention particulière. C'est pourquoi nous privilégions
-                  l'écoute, le conseil personnalisé et un suivi rigoureux de chaque étape de votre projet.
+                  Notre équipe d'experts certifiés met son savoir-faire au service de votre confort, en respectant
+                  scrupuleusement la législation wallonne et en privilégiant les solutions économes en énergie.
                 </p>
                 <p>
-                  Notre philosophie ? <strong className="text-slate-900">La qualité avant tout</strong>, des matériaux
-                  premium aux finitions parfaites, en passant par le respect des délais et la transparence totale.
+                  <strong className="text-gray-900">Notre engagement :</strong> trouver l'équilibre parfait entre votre
+                  budget et la qualité des installations, pour votre satisfaction totale.
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-6 mt-10">
                 <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                  <Users className="w-8 h-8 text-[#96C044] mb-3" />
-                  <div className="font-bold text-slate-900 mb-1">Équipe Experte</div>
-                  <div className="text-sm text-gray-600">Artisans qualifiés et passionnés</div>
+                  <Shield className="w-8 h-8 text-[#007BBD] mb-3" />
+                  <div className="font-bold text-gray-900 mb-1">Conformité Garantie</div>
+                  <div className="text-sm text-gray-600">Respect législation wallonne</div>
                 </div>
                 <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                  <Award className="w-8 h-8 text-[#96C044] mb-3" />
-                  <div className="font-bold text-slate-900 mb-1">Certifications</div>
-                  <div className="text-sm text-gray-600">Normes et qualité garanties</div>
+                  <Award className="w-8 h-8 text-[#007BBD] mb-3" />
+                  <div className="font-bold text-gray-900 mb-1">Certifications</div>
+                  <div className="text-sm text-gray-600">Techniciens agréés toutes marques</div>
                 </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-[#007BBD]/20 to-transparent rounded-3xl"></div>
+              <div className="relative bg-gradient-to-br from-[#007BBD] to-[#08C5F7] rounded-3xl p-12 text-white">
+                <Flame className="w-24 h-24 mx-auto mb-6 opacity-20" />
+                <h3 className="text-3xl font-bold text-center mb-6">Nos Valeurs</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#8CC54A]" />
+                    <span>Qualité et fiabilité garanties</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#8CC54A]" />
+                    <span>Service client personnalisé</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#8CC54A]" />
+                    <span>Prix transparents et justes</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#8CC54A]" />
+                    <span>Disponibilité 24/7 pour urgences</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Specialties Section */}
-      <section className="py-24 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block bg-gradient-to-r from-[#96C044] to-[#7da036] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
-              Nos Spécialités
-            </span>
-            <h2 className="text-4xl lg:text-6xl font-black text-white mb-6 leading-tight">
-              Un Savoir-Faire <span className="text-[#96C044]">Unique</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Des compétences techniques pointues au service de vos projets les plus exigeants
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {specialties.map((specialty, index) => (
-              <div key={index} className="group">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-8 text-center hover:bg-gradient-to-br hover:from-[#96C044]/20 hover:to-[#7da036]/20 transition-all duration-500 transform hover:scale-105">
-                  <div className="text-[#96C044] mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                    {specialty.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{specialty.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{specialty.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
-      <section id="services" className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <section id="services" className="py-24 bg-gradient-to-br from-white to-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
-            <span className="inline-block bg-gradient-to-r from-[#96C044] to-[#7da036] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
-              Nos Services Premium
+            <span className="inline-block bg-[#007BBD] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
+              Nos Services
             </span>
-            <h2 className="text-4xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight">
-              Des Solutions <span className="text-[#96C044]">Complètes</span> pour Chaque Besoin
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">
+              Des Solutions <span className="text-[#007BBD]">Complètes</span> pour Votre Confort
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              De la conception à l'entretien, nous couvrons tous vos besoins en matière de toiture et bardage avec une
-              expertise reconnue
+              De l'installation à l'entretien, nous couvrons tous vos besoins en chauffage, sanitaire et ventilation
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {services.map((service, index) => (
               <div key={index} className="group">
-                <Card className="overflow-hidden border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 bg-white">
+                <Card className="overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white">
                   <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={service.image || "/placeholder.svg"}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-80`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color}`}></div>
                     <div className="absolute top-4 left-4 p-3 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30">
                       <div className="text-white">{service.icon}</div>
                     </div>
@@ -526,17 +485,17 @@ export default function HomePage() {
                     </div>
                   </div>
                   <CardContent className="p-8">
-                    <p className="text-gray-600 mb-6 leading-relaxed text-lg">{service.description}</p>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
                     <div className="space-y-3 mb-6">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-[#96C044] flex-shrink-0" />
-                          <span className="text-gray-700 font-medium">{feature}</span>
+                          <CheckCircle className="w-5 h-5 text-[#8CC54A] flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
                         </div>
                       ))}
                     </div>
-                    <Button className="w-full bg-gradient-to-r from-[#96C044] to-[#7da036] hover:from-[#7da036] hover:to-[#96C044] text-white font-bold py-4 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
-                      Découvrir ce Service
+                    <Button className="w-full bg-[#007BBD] hover:bg-[#0066a1] text-white font-bold py-4 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                      En savoir plus
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </CardContent>
@@ -547,153 +506,88 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Specialties Section */}
+      <section className="py-24 bg-gradient-to-r from-[#007BBD] to-[#08C5F7]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <span className="inline-block bg-gradient-to-r from-[#96C044] to-[#7da036] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
-              Notre Méthode
-            </span>
-            <h2 className="text-4xl lg:text-6xl font-black text-white mb-8 leading-tight">
-              De Votre Idée à Votre <span className="text-[#96C044]">Toit Parfait</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+              Pourquoi Choisir <span className="text-[#8CC54A]">Monte & Chauffe</span> ?
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Un processus éprouvé en 5 étapes pour garantir votre satisfaction totale
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto">
+              Une expertise reconnue au service de votre confort thermique
             </p>
           </div>
 
-          <div className="relative">
-            {/* Connection Line */}
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#96C044] to-[#7da036] transform -translate-y-1/2 z-0"></div>
-
-            <div className="grid md:grid-cols-5 gap-8 relative z-10">
-              {[
-                {
-                  title: "Contact & Écoute",
-                  desc: "de Votre Projet",
-                  icon: <MessageSquare className="w-8 h-8" />,
-                  detail: "Première prise de contact pour comprendre vos besoins et attentes",
-                },
-                {
-                  title: "Visite sur Site",
-                  desc: "& Devis Gratuit",
-                  icon: <Eye className="w-8 h-8" />,
-                  detail: "Diagnostic complet et établissement d'un devis détaillé et transparent",
-                },
-                {
-                  title: "Planification",
-                  desc: "& Choix des Matériaux",
-                  icon: <Calendar className="w-8 h-8" />,
-                  detail: "Sélection des meilleurs matériaux et planification optimale des travaux",
-                },
-                {
-                  title: "Réalisation",
-                  desc: "par l'Équipe Fourneau",
-                  icon: <Hammer className="w-8 h-8" />,
-                  detail: "Exécution des travaux avec le plus grand soin et respect des délais",
-                },
-                {
-                  title: "Vérification",
-                  desc: "& Garantie",
-                  icon: <Shield className="w-8 h-8" />,
-                  detail: "Contrôle qualité final et mise en place de nos garanties étendues",
-                },
-              ].map((step, index) => (
-                <div key={index} className="text-center group">
-                  <div className="relative mb-8">
-                    <div className="w-20 h-20 bg-gradient-to-br from-[#96C044] to-[#7da036] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                      {index + 1}
-                    </div>
-                    <div className="absolute -top-2 -left-2 w-24 h-24 border-2 border-[#96C044]/30 rounded-full group-hover:border-[#96C044] transition-colors duration-300"></div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {specialties.map((specialty, index) => (
+              <div key={index} className="group">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-500 transform hover:scale-105">
+                  <div className="text-[#8CC54A] mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                    {specialty.icon}
                   </div>
-
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 group-hover:bg-white/20 transition-all duration-300">
-                    <div className="text-[#96C044] mb-4 flex justify-center">{step.icon}</div>
-                    <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                    <p className="text-[#96C044] font-semibold mb-3">{step.desc}</p>
-                    <p className="text-gray-300 text-sm leading-relaxed">{step.detail}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Galerie Section */}
-      <section id="realisations" className="py-24 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <span className="inline-block bg-gradient-to-r from-[#96C044] to-[#7da036] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
-              Portfolio
-            </span>
-            <h2 className="text-4xl lg:text-6xl font-black text-white mb-8 leading-tight">
-              L'Excellence de Nos <span className="text-[#96C044]">Réalisations</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Découvrez nos projets les plus remarquables et laissez-vous inspirer
-            </p>
-          </div>
-
-          {/* Featured Project */}
-          <div className="mb-16">
-            <div className="relative h-96 lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-              <Image src="/placeholder.svg?height=600&width=1200" alt="Projet vedette" fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-              <div className="absolute bottom-8 left-8 right-8 text-white">
-                <div className="flex items-center space-x-4 mb-4">
-                  <span className="bg-[#96C044] px-4 py-2 rounded-full text-sm font-bold">Projet Vedette</span>
-                  <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
-                    Rénovation Complète
-                  </span>
-                </div>
-                <h3 className="text-3xl lg:text-5xl font-black mb-4">Villa Moderne - Wanze</h3>
-                <p className="text-lg lg:text-xl opacity-90 max-w-2xl">
-                  Transformation complète d'une toiture traditionnelle en toiture moderne avec isolation renforcée et
-                  panneaux photovoltaïques intégrés.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Gallery Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {[
-              { title: "Toiture Ardoise", location: "Huy", type: "Neuve" },
-              { title: "Bardage Moderne", location: "Andenne", type: "Rénovation" },
-              { title: "Démoussage Pro", location: "Namur", type: "Entretien" },
-              { title: "Réparation Urgente", location: "Wanze", type: "Dépannage" },
-              { title: "Isolation Renforcée", location: "Liège", type: "Rénovation" },
-              { title: "Panneaux Solaires", location: "Seraing", type: "Installation" },
-              { title: "Charpente Traditionnelle", location: "Verviers", type: "Neuve" },
-              { title: "Zinguerie Artistique", location: "Spa", type: "Spécialité" },
-            ].map((project, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src={`/placeholder.svg?height=300&width=400`}
-                  alt={project.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span className="bg-[#96C044] px-2 py-1 rounded text-xs font-bold">{project.type}</span>
-                    </div>
-                    <h4 className="font-bold text-lg mb-1">{project.title}</h4>
-                    <p className="text-sm opacity-90">{project.location}</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">{specialty.title}</h3>
+                  <p className="text-gray-100 leading-relaxed">{specialty.description}</p>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="text-center">
-            <Button className="bg-gradient-to-r from-[#96C044] to-[#7da036] hover:from-[#7da036] hover:to-[#96C044] text-white text-lg px-10 py-6 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300">
-              <Camera className="mr-3 w-6 h-6" />
-              Voir Toute Notre Galerie
-            </Button>
+      {/* Process Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-20">
+            <span className="inline-block bg-[#007BBD] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
+              Notre Méthode
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">
+              Un Service <span className="text-[#007BBD]">Transparent</span> et Efficace
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Contact",
+                desc: "Premier échange",
+                icon: <MessageSquare className="w-8 h-8" />,
+                detail: "Discussion de vos besoins et prise de rendez-vous",
+              },
+              {
+                title: "Diagnostic",
+                desc: "Analyse complète",
+                icon: <Eye className="w-8 h-8" />,
+                detail: "Évaluation sur place et devis détaillé gratuit",
+              },
+              {
+                title: "Installation",
+                desc: "Travaux de qualité",
+                icon: <Wrench className="w-8 h-8" />,
+                detail: "Réalisation par nos techniciens certifiés",
+              },
+              {
+                title: "Suivi",
+                desc: "Service après-vente",
+                icon: <Shield className="w-8 h-8" />,
+                detail: "Garantie et contrat d'entretien disponible",
+              },
+            ].map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="relative mb-8">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#007BBD] to-[#08C5F7] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto shadow-xl">
+                    {index + 1}
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-3xl p-6 shadow-lg">
+                  <div className="text-[#007BBD] mb-4 flex justify-center">{step.icon}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-[#F79431] font-semibold mb-3">{step.desc}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{step.detail}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -702,185 +596,55 @@ export default function HomePage() {
       <section id="temoignages" className="py-24 bg-gradient-to-br from-blue-50 via-white to-green-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
-            <span className="inline-block bg-gradient-to-r from-[#96C044] to-[#7da036] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
+            <span className="inline-block bg-[#007BBD] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
               Témoignages
             </span>
-            <h2 className="text-4xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight">
-              Ils Nous Font <span className="text-[#96C044]">Confiance</span>
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">
+              La Satisfaction de Nos <span className="text-[#007BBD]">Clients</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              La satisfaction de nos clients est notre plus belle récompense
+              Découvrez ce que nos clients disent de nos services
             </p>
           </div>
 
-          {/* Featured Testimonial */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <Card className="bg-gradient-to-br from-white to-gray-50 border-0 shadow-2xl overflow-hidden">
-              <CardContent className="p-12 text-center">
-                <Quote className="w-16 h-16 text-[#96C044] mx-auto mb-8" />
-                <p className="text-2xl lg:text-3xl text-gray-700 font-medium leading-relaxed mb-8 italic">
-                  "{testimonials[currentTestimonial].text}"
-                </p>
-                <div className="flex items-center justify-center space-x-6">
-                  <Image
-                    src={testimonials[currentTestimonial].image || "/placeholder.svg"}
-                    alt={testimonials[currentTestimonial].name}
-                    width={80}
-                    height={80}
-                    className="rounded-full border-4 border-[#96C044]"
-                  />
-                  <div className="text-left">
-                    <div className="font-bold text-xl text-slate-900">{testimonials[currentTestimonial].name}</div>
-                    <div className="text-gray-600">{testimonials[currentTestimonial].location}</div>
-                    <div className="text-[#96C044] font-semibold text-sm">
-                      {testimonials[currentTestimonial].project}
-                    </div>
-                    <div className="flex items-center mt-2">
-                      {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
           {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.slice(0, 3).map((testimonial, index) => (
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-white shadow-xl border-0 hover:shadow-2xl transition-shadow duration-300">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      <Star key={i} className="w-5 h-5 text-[#F79431] fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-6 italic leading-relaxed">"{testimonial.text.substring(0, 120)}..."</p>
+                  <Quote className="w-8 h-8 text-[#007BBD] mb-4" />
+                  <p className="text-gray-600 mb-6 italic leading-relaxed">"{testimonial.text}"</p>
                   <div className="flex items-center space-x-4">
-                    <Image
-                      src={testimonial.image || "/placeholder.svg"}
-                      alt={testimonial.name}
-                      width={50}
-                      height={50}
-                      className="rounded-full"
-                    />
+                    <div className="w-12 h-12 bg-[#007BBD] rounded-full flex items-center justify-center text-white font-bold">
+                      {testimonial.name.charAt(0)}
+                    </div>
                     <div>
-                      <div className="font-bold text-slate-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-500">{testimonial.location}</div>
+                      <div className="font-bold text-gray-900">{testimonial.name}</div>
+                      <div className="text-sm text-gray-500">{testimonial.location} - {testimonial.project}</div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section id="blog" className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <span className="inline-block bg-gradient-to-r from-[#96C044] to-[#7da036] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
-              Blog & Conseils
-            </span>
-            <h2 className="text-4xl lg:text-6xl font-black text-white mb-8 leading-tight">
-              L'Expertise à Votre <span className="text-[#96C044]">Portée</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Nos conseils d'experts pour un toit en parfaite santé
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {blogPosts.map((post, index) => (
-              <Card
-                key={index}
-                className="bg-white border-0 shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-105"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-[#96C044] text-white px-3 py-1 rounded-full text-xs font-bold">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-                <CardContent className="p-8">
-                  <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
-                    <span>{post.date}</span>
-                    <span>•</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4 leading-tight">{post.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{post.excerpt}</p>
-                  <Button
-                    variant="outline"
-                    className="border-[#96C044] text-[#96C044] hover:bg-[#96C044] hover:text-white font-bold"
-                  >
-                    <BookOpen className="mr-2 w-4 h-4" />
-                    Lire l'Article
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button className="bg-gradient-to-r from-[#96C044] to-[#7da036] hover:from-[#7da036] hover:to-[#96C044] text-white text-lg px-10 py-6 rounded-full font-bold shadow-2xl">
-              Voir Tous Nos Articles
-              <ArrowRight className="ml-3 w-6 h-6" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Zone d'intervention */}
-      <section className="py-24 bg-gradient-to-br from-[#96C044] via-[#7da036] to-[#96C044]">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h2 className="text-4xl lg:text-6xl font-black text-white mb-8 leading-tight">
-              Intervention Rapide à <span className="text-slate-900">Wanze</span> et Alentours
-            </h2>
-            <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
-              Jer'Home Toiture se situe à Wanze et intervient dans toute la région avec des délais d'intervention
-              optimisés
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="bg-white/20 backdrop-blur-sm rounded-3xl p-8 border border-white/30">
-                <MapPinIcon className="w-12 h-12 text-white mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-white mb-2">Zone Principale</h3>
-                <p className="text-white/90">Wanze et communes limitrophes</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-3xl p-8 border border-white/30">
-                <Clock className="w-12 h-12 text-white mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-white mb-2">Délai d'Intervention</h3>
-                <p className="text-white/90">24h pour les urgences</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-3xl p-8 border border-white/30">
-                <Phone className="w-12 h-12 text-white mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-white mb-2">Contact Direct</h3>
-                <p className="text-white/90 font-bold text-lg">0496/22.95.90</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900">
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
-            <span className="inline-block bg-gradient-to-r from-[#96C044] to-[#7da036] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
+            <span className="inline-block bg-[#8CC54A] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
               Questions Fréquentes
             </span>
-            <h2 className="text-4xl lg:text-6xl font-black text-white mb-8 leading-tight">
-              Vos Questions, <span className="text-[#96C044]">Nos Réponses</span>
+            <h2 className="text-4xl lg:text-5xl font-black text-white mb-8 leading-tight">
+              Tout Ce Que Vous Devez <span className="text-[#8CC54A]">Savoir</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Toutes les informations essentielles pour votre projet de toiture
-            </p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-6">
@@ -895,7 +659,7 @@ export default function HomePage() {
                 >
                   <span className="font-bold text-white text-lg pr-4">{faq.question}</span>
                   <ChevronDown
-                    className={`w-6 h-6 text-[#96C044] transition-transform duration-300 flex-shrink-0 ${
+                    className={`w-6 h-6 text-[#8CC54A] transition-transform duration-300 flex-shrink-0 ${
                       openFaq === index ? "rotate-180" : ""
                     }`}
                   />
@@ -903,19 +667,12 @@ export default function HomePage() {
                 {openFaq === index && (
                   <div className="px-8 pb-8">
                     <div className="border-t border-white/20 pt-6">
-                      <p className="text-gray-300 leading-relaxed text-lg">{faq.answer}</p>
+                      <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
                     </div>
                   </div>
                 )}
               </div>
             ))}
-          </div>
-
-          <div className="text-center mt-16">
-            <Button className="bg-gradient-to-r from-[#96C044] to-[#7da036] hover:from-[#7da036] hover:to-[#96C044] text-white text-lg px-10 py-6 rounded-full font-bold shadow-2xl">
-              <MessageSquare className="mr-3 w-6 h-6" />
-              Poser une Question
-            </Button>
           </div>
         </div>
       </section>
@@ -924,70 +681,92 @@ export default function HomePage() {
       <section id="contact" className="py-24 bg-gradient-to-br from-white via-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
-            <span className="inline-block bg-gradient-to-r from-[#96C044] to-[#7da036] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
+            <span className="inline-block bg-[#007BBD] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
               Contact
             </span>
-            <h2 className="text-4xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight">
-              Prêt à Réaliser Votre <span className="text-[#96C044]">Projet</span> ?
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">
+              Besoin d'un <span className="text-[#007BBD]">Expert</span> ?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Contactez-nous dès maintenant pour un devis gratuit et personnalisé
+              Contactez-nous pour un devis gratuit ou une intervention rapide
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Info */}
             <div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-8">Parlons de Votre Projet</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-8">Nous Sommes Là Pour Vous</h3>
 
               <div className="space-y-8">
-                <div className="flex items-start space-x-6">
-                  <div className="p-4 bg-gradient-to-br from-[#96C044] to-[#7da036] text-white rounded-2xl shadow-lg">
-                    <Phone className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xl text-slate-900 mb-2">Téléphone</h4>
-                    <p className="text-[#96C044] text-2xl font-black mb-2">0496/22.95.90</p>
-                    <p className="text-gray-600">Disponible 7j/7 pour les urgences</p>
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <h4 className="font-bold text-xl text-gray-900 mb-4">Contacts Directs</h4>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="p-3 bg-[#007BBD] text-white rounded-xl">
+                        <Phone className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Liège et région</p>
+                        <p className="text-[#007BBD] text-xl font-bold">04 / 374.17.53</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <div className="p-3 bg-[#007BBD] text-white rounded-xl">
+                        <Phone className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Verviers et région</p>
+                        <p className="text-[#007BBD] text-xl font-bold">087 / 34.07.29</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <div className="p-3 bg-[#8CC54A] text-white rounded-xl">
+                        <MessageSquare className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Mobile & WhatsApp</p>
+                        <p className="text-[#8CC54A] text-xl font-bold">0497 / 83.16.75</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6">
-                  <div className="p-4 bg-gradient-to-br from-[#96C044] to-[#7da036] text-white rounded-2xl shadow-lg">
-                    <Mail className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xl text-slate-900 mb-2">Email</h4>
-                    <p className="text-gray-700 text-lg mb-2">info@jerhometoiture.be</p>
-                    <p className="text-gray-600">Réponse sous 24h garantie</p>
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <h4 className="font-bold text-xl text-gray-900 mb-4">Adresse & Horaires</h4>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-4">
+                      <div className="p-3 bg-[#F79431] text-white rounded-xl">
+                        <MapPin className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Adresse</p>
+                        <p className="text-gray-700">Rue Fyon 10, 4800 Verviers</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="p-3 bg-[#F79431] text-white rounded-xl">
+                        <Clock className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Horaires</p>
+                        <p className="text-gray-700">Lun-Ven: 08:00-18:00</p>
+                        <p className="text-gray-500">Sam-Dim: Fermé</p>
+                        <p className="text-[#EF313A] font-semibold mt-2">Urgences 24/7</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6">
-                  <div className="p-4 bg-gradient-to-br from-[#96C044] to-[#7da036] text-white rounded-2xl shadow-lg">
-                    <MapPin className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xl text-slate-900 mb-2">Adresse</h4>
-                    <p className="text-gray-700 text-lg mb-2">Wanze, Belgique</p>
-                    <p className="text-gray-600">Zone d'intervention étendue</p>
-                  </div>
+                <div className="flex gap-4">
+                  <Button className="flex-1 bg-[#007BBD] hover:bg-[#0066a1] text-white font-bold py-4 rounded-2xl shadow-xl">
+                    <Phone className="mr-2 w-5 h-5" />
+                    Appeler
+                  </Button>
+                  <Button className="flex-1 bg-[#8CC54A] hover:bg-[#7da036] text-white font-bold py-4 rounded-2xl shadow-xl">
+                    <MessageSquare className="mr-2 w-5 h-5" />
+                    WhatsApp
+                  </Button>
                 </div>
-              </div>
-
-              {/* Quick Actions */}
-              <div className="mt-12 space-y-4">
-                <Button className="w-full bg-gradient-to-r from-[#96C044] to-[#7da036] hover:from-[#7da036] hover:to-[#96C044] text-white text-lg py-6 rounded-2xl font-bold shadow-xl">
-                  <Phone className="mr-3 w-6 h-6" />
-                  Appeler Maintenant
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-[#96C044] text-[#96C044] hover:bg-[#96C044] hover:text-white text-lg py-6 rounded-2xl font-bold"
-                >
-                  <Download className="mr-3 w-6 h-6" />
-                  Télécharger Notre Brochure
-                </Button>
               </div>
             </div>
 
@@ -995,24 +774,24 @@ export default function HomePage() {
             <div>
               <Card className="bg-white shadow-2xl border-0 overflow-hidden">
                 <CardContent className="p-10">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-8">Demande de Devis Gratuit</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-8">Demande de Devis Gratuit</h3>
 
                   <form className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">Prénom *</label>
-                        <input
-                          type="text"
-                          className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#96C044] focus:outline-none transition-colors duration-300"
-                          placeholder="Votre prénom"
-                        />
-                      </div>
-                      <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">Nom *</label>
                         <input
                           type="text"
-                          className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#96C044] focus:outline-none transition-colors duration-300"
+                          className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#007BBD] focus:outline-none transition-colors duration-300"
                           placeholder="Votre nom"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Prénom *</label>
+                        <input
+                          type="text"
+                          className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#007BBD] focus:outline-none transition-colors duration-300"
+                          placeholder="Votre prénom"
                         />
                       </div>
                     </div>
@@ -1021,52 +800,44 @@ export default function HomePage() {
                       <label className="block text-sm font-bold text-gray-700 mb-2">Téléphone *</label>
                       <input
                         type="tel"
-                        className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#96C044] focus:outline-none transition-colors duration-300"
+                        className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#007BBD] focus:outline-none transition-colors duration-300"
                         placeholder="Votre numéro de téléphone"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">Email *</label>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">Email</label>
                       <input
                         type="email"
-                        className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#96C044] focus:outline-none transition-colors duration-300"
+                        className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#007BBD] focus:outline-none transition-colors duration-300"
                         placeholder="votre@email.com"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">Type de service *</label>
-                      <select className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#96C044] focus:outline-none transition-colors duration-300">
+                      <label className="block text-sm font-bold text-gray-700 mb-2">Type d'intervention *</label>
+                      <select className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#007BBD] focus:outline-none transition-colors duration-300">
                         <option>Sélectionnez un service</option>
-                        <option>Toiture Neuve</option>
-                        <option>Rénovation Complète</option>
-                        <option>Entretien & Démoussage</option>
-                        <option>Dépannage Urgent</option>
-                        <option>Bardage</option>
-                        <option>Panneaux Photovoltaïques</option>
-                        <option>Autre / Conseil</option>
+                        <option>Installation chauffage</option>
+                        <option>Entretien chaudière</option>
+                        <option>Dépannage urgent</option>
+                        <option>Installation sanitaire</option>
+                        <option>Système de ventilation</option>
+                        <option>Diagnostic énergétique</option>
+                        <option>Autre demande</option>
                       </select>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">Décrivez votre projet *</label>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">Message</label>
                       <textarea
-                        rows={5}
-                        className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#96C044] focus:outline-none transition-colors duration-300 resize-none"
-                        placeholder="Décrivez-nous votre projet en détail : type de toiture, surface approximative, problèmes rencontrés, délais souhaités..."
+                        rows={4}
+                        className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-[#007BBD] focus:outline-none transition-colors duration-300 resize-none"
+                        placeholder="Décrivez votre projet ou votre problème..."
                       />
                     </div>
 
-                    <div className="flex items-start space-x-3">
-                      <input type="checkbox" className="mt-1" />
-                      <p className="text-sm text-gray-600">
-                        J'accepte d'être contacté par Jer'Home Toiture concernant ma demande et je consens au traitement
-                        de mes données personnelles.
-                      </p>
-                    </div>
-
-                    <Button className="w-full bg-gradient-to-r from-[#96C044] to-[#7da036] hover:from-[#7da036] hover:to-[#96C044] text-white text-xl py-6 rounded-2xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <Button className="w-full bg-gradient-to-r from-[#007BBD] to-[#08C5F7] hover:from-[#0066a1] hover:to-[#007BBD] text-white text-xl py-6 rounded-2xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-300">
                       <Send className="mr-3 w-6 h-6" />
                       Envoyer ma Demande
                     </Button>
@@ -1079,77 +850,64 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-black via-gray-900 to-black text-white py-16">
+      <footer className="bg-gradient-to-br from-gray-900 to-black text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-12">
             {/* Company Info */}
             <div className="md:col-span-2">
-              <Image
-                src="/logo-jerhome.png"
-                alt="Jer'Home Toiture"
-                width={200}
-                height={70}
-                className="h-12 w-auto mb-6 brightness-0 invert"
-              />
-              <p className="text-gray-300 mb-6 text-lg leading-relaxed max-w-md">
-                Votre toit, ma passion. L'expertise au service de votre foyer depuis plus de 15 ans à Wanze et ses
-                environs.
+              <div className="flex items-center mb-6">
+                <span className="text-2xl font-black text-white">Monte</span>
+                <span className="text-2xl font-black text-[#F79431]">&</span>
+                <span className="text-2xl font-black text-white">Chauffe</span>
+                <div className="ml-2 flex">
+                  <div className="w-2 h-6 bg-[#08C5F7] rounded-full"></div>
+                  <div className="w-2 h-6 bg-[#8CC54A] rounded-full -ml-1"></div>
+                  <div className="w-2 h-6 bg-[#F79431] rounded-full -ml-1"></div>
+                </div>
+              </div>
+              <p className="text-gray-300 mb-6 max-w-md">
+                Votre spécialiste en chauffage, sanitaire et ventilation. Qualité, fiabilité et satisfaction garanties depuis plus de 15 ans.
               </p>
               <div className="flex items-center space-x-4">
-                <div className="p-3 bg-[#96C044] rounded-full">
-                  <Phone className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-[#96C044] font-bold text-xl">0496/22.95.90</p>
-                  <p className="text-gray-400 text-sm">Service d'urgence 24h/24</p>
-                </div>
+                <a href="#" className="p-3 bg-[#007BBD] rounded-full hover:bg-[#0066a1] transition">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="https://wa.me/32497831675" className="p-3 bg-[#8CC54A] rounded-full hover:bg-[#7da036] transition">
+                  <MessageSquare className="w-5 h-5" />
+                </a>
               </div>
             </div>
 
             {/* Services */}
             <div>
-              <h4 className="font-bold text-xl mb-6 text-[#96C044]">Nos Services</h4>
+              <h4 className="font-bold text-xl mb-6 text-[#F79431]">Nos Services</h4>
               <ul className="space-y-3 text-gray-300">
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Toitures Neuves</li>
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Rénovations</li>
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Entretiens & Démoussage</li>
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Dépannages Urgents</li>
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Bardages</li>
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Panneaux Photovoltaïques</li>
+                <li className="hover:text-[#8CC54A] transition-colors cursor-pointer">Chauffage</li>
+                <li className="hover:text-[#8CC54A] transition-colors cursor-pointer">Sanitaire</li>
+                <li className="hover:text-[#8CC54A] transition-colors cursor-pointer">Ventilation</li>
+                <li className="hover:text-[#8CC54A] transition-colors cursor-pointer">Entretien</li>
+                <li className="hover:text-[#8CC54A] transition-colors cursor-pointer">Dépannage 24/7</li>
+                <li className="hover:text-[#8CC54A] transition-colors cursor-pointer">Diagnostic énergétique</li>
               </ul>
             </div>
 
-            {/* Links */}
+            {/* Contact */}
             <div>
-              <h4 className="font-bold text-xl mb-6 text-[#96C044]">Liens Utiles</h4>
+              <h4 className="font-bold text-xl mb-6 text-[#F79431]">Contact</h4>
               <ul className="space-y-3 text-gray-300">
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">À Propos</li>
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Nos Réalisations</li>
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Blog & Conseils</li>
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Témoignages</li>
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Devis Gratuit</li>
-                <li className="hover:text-[#96C044] transition-colors cursor-pointer">Contact</li>
+                <li>Liège: 04 / 374.17.53</li>
+                <li>Verviers: 087 / 34.07.29</li>
+                <li>Mobile: 0497 / 83.16.75</li>
+                <li>Rue Fyon 10, 4800 Verviers</li>
+                <li className="text-[#8CC54A]">Urgences 24/7</li>
               </ul>
             </div>
           </div>
 
           {/* Bottom Section */}
           <div className="border-t border-gray-800 mt-12 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="text-gray-400 mb-4 md:mb-0">
-                <p>&copy; 2024 Jer'Home Toiture. Tous droits réservés.</p>
-              </div>
-              <div className="flex items-center space-x-6 text-gray-400 text-sm">
-                <a href="#" className="hover:text-[#96C044] transition-colors">
-                  Mentions Légales
-                </a>
-                <a href="#" className="hover:text-[#96C044] transition-colors">
-                  Politique de Confidentialité
-                </a>
-                <a href="#" className="hover:text-[#96C044] transition-colors">
-                  CGV
-                </a>
-              </div>
+            <div className="text-center text-gray-400">
+              <p>&copy; 2024 Monte & Chauffe. Tous droits réservés.</p>
             </div>
           </div>
         </div>
@@ -1157,3 +915,4 @@ export default function HomePage() {
     </div>
   )
 }
+Made with
