@@ -284,6 +284,12 @@ export default function HomePage() {
       <section
         id="accueil"
         className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#007BBD] via-[#0066a1] to-[#08C5F7]"
+                style={{
+          backgroundImage: `linear-gradient(rgba(0, 123, 189, 0.85), rgba(0, 123, 189, 0.85)), url('https://www.facebook.com/photo/?fbid=613167723947291&set=a.558914869372577')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
       >
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
