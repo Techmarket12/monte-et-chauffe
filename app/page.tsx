@@ -291,6 +291,9 @@ export default function HomePage() {
           backgroundAttachment: "fixed",
         }}
       >
+        {/* Dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+        
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8CC54A]/20 rounded-full blur-3xl animate-pulse"></div>
@@ -300,23 +303,23 @@ export default function HomePage() {
         <div className="relative z-10 container mx-auto px-4 text-white">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
-              <span className="inline-block bg-white/20 backdrop-blur text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider mb-4">
+              <span className="inline-block bg-black/60 backdrop-blur-md text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider mb-4 shadow-2xl">
                 Qualité & Fiabilité depuis 15 ans
               </span>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-tight">
-              <span className="block">Votre Confort,</span>
-              <span className="bg-gradient-to-r from-[#8CC54A] via-[#F79431] to-[#8CC54A] bg-clip-text text-transparent">
+            <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-tight drop-shadow-2xl">
+              <span className="block text-white">Votre Confort,</span>
+              <span className="bg-gradient-to-r from-[#8CC54A] via-[#F79431] to-[#8CC54A] bg-clip-text text-transparent drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
                 Notre Priorité
               </span>
             </h1>
 
-            <p className="text-xl lg:text-2xl mb-6 opacity-90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl lg:text-2xl mb-6 text-white font-medium max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
               Installation de chauffage, sanitaire et ventilation réalisée exclusivement avec qualité et fiabilité
             </p>
 
-            <p className="text-lg lg:text-xl mb-12 font-semibold max-w-2xl mx-auto">
+            <p className="text-lg lg:text-xl mb-12 font-bold text-white max-w-2xl mx-auto drop-shadow-lg">
               L'équilibre entre le budget et votre satisfaction au cœur du projet
             </p>
 
@@ -338,15 +341,15 @@ export default function HomePage() {
               </Button>
             </div>
 
-            {/* Stats Bar */}
+          {/* Stats Bar */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+                  className="text-center bg-black/60 backdrop-blur-md rounded-2xl p-6 border border-white/30 shadow-2xl"
                 >
                   <div className="text-[#8CC54A] mb-2 flex justify-center">{stat.icon}</div>
-                  <div className="text-3xl font-black text-white mb-1">{stat.number}</div>
+                  <div className="text-3xl font-black text-white mb-1 drop-shadow-lg">{stat.number}</div>
                   <div className="text-sm text-gray-100 font-medium">{stat.label}</div>
                 </div>
               ))}
