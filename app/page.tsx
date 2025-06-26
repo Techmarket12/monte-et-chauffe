@@ -285,7 +285,7 @@ export default function HomePage() {
         id="accueil"
         className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#007BBD] via-[#0066a1] to-[#08C5F7]"
                 style={{
-          backgroundImage: `linear-gradient(rgba(0, 123, 189, 0.85), rgba(0, 123, 189, 0.85)), url('https://www.facebook.com/photo/?fbid=613167723947291&set=a.558914869372577')`,
+          backgroundImage: `linear-gradient(rgba(0, 123, 189, 0.85), rgba(0, 123, 189, 0.85)), url('https://scontent.fbru5-1.fna.fbcdn.net/v/t39.30808-6/472677963_1061863605744365_4000724601509109425_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=0UUeVfbXWUoQ7kNvwH4EK7A&_nc_oc=Admibvs1BnitvbdQri8VOboyK8re-A2AruzlFGC3iEGm1G_CD0pifjIrkprkxMx3yLM&_nc_zt=23&_nc_ht=scontent.fbru5-1.fna&_nc_gid=59Sx2rUEYtMg0B0-2-HQsQ&oh=00_AfMWeweL7toMtKVKfR70sRYDvj7TW3pyaky4MEszY1Qwag&oe=6862D3E1')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
