@@ -331,7 +331,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#007BBD] text-lg px-10 py-6 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-[#8CC54A] hover:bg-[#7da036] text-white text-lg px-10 py-6 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 <MessageSquare className="mr-3 w-6 h-6" />
                 WhatsApp
